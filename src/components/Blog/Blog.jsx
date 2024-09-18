@@ -6,7 +6,7 @@ const Blog = ({blog, handleAddToBookmark, handleMarkAsRead}) => {
     const {id, title, cover, author_img, author, posted_date, reading_time, hashtags } =blog;
 
     return (
-        <div className='mb-20 space-y-4'>
+        <div className='mb-20 space-y-4 border-b-2 pb-8'>
             <img className='w-full mb-8 rounded-lg' src={cover} alt={`Cover picture of the title${title}`} />
             <div className='flex justify-between mb-4 '>
                 <div className='flex'>
@@ -16,7 +16,7 @@ const Blog = ({blog, handleAddToBookmark, handleMarkAsRead}) => {
                     <p>{posted_date}</p>
                 </div>
                 </div>
-                <div className='align-middle'>
+                <div className='flex items-center'>
                     <span>{reading_time}min read</span>
                     <button 
                     onClick={() =>handleAddToBookmark (blog)}
@@ -25,7 +25,7 @@ const Blog = ({blog, handleAddToBookmark, handleMarkAsRead}) => {
                 </div>
                 
             </div>
-            <h2 className='text-4xl'>{title}</h2>
+            <h2 className='text-xl'>{title}</h2>
             <p>
                 {
                     hashtags.map((hash,idx) => <span key={idx}><a href=''>{hash}</a></span>)
